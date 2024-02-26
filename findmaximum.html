@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java IDE</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="section">
+                <h5 class="center-align" style="font-weight: bold;">Upskill Code Exercise</h5>
+                <h6 class="center-align" style="font-weight: bold;">Exercise 6 : Find Maximum</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="section">
+                <h5 class="left-align" style="font-weight: bold;">
+                    Write a method that returns the largest integer in the list.<br/>
+                    You can assume that the list has at least one element.
+                </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="section">
+                <iframe
+                frameBorder="0"
+                height="450px"  
+                src="https://onecompiler.com/embed/" 
+                width="100%"
+                ></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="section">
+                <button class="btn waves-effect waves-light" type="button" onclick="displayAnswer()">View Answer
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+            <div class="section">
+                <div id="editor" style="height: 300px; width: 960px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/ace.js" integrity="sha512-hWCQiPFpU0dM1jkN2dkt/OrdSXO4KN5y2utMvF0ZkacWmRvbOlEygqBW0YiJwq/nn6iywh4XnMGMG6ESQYM7WA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/eclipse");
+        editor.session.setMode("ace/mode/java");
+    </script>
+    <script>
+        function displayAnswer() {
+            const javaCode = `
+public Integer maximum(Integer[] list) {
+    int maximum = list[0];
+    for (int i : list) {
+        if (i > maximum) {
+            maximum = i;
+        }
+    }
+    return maximum;
+}
+`;
+            var editor = ace.edit("editor");
+            editor.insert(javaCode);
+        }
+    </script>
+</body>
+</html>

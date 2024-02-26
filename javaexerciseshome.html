@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginning Brainteasers</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        .btn {
+            margin-bottom: 0.5rem;
+        }
+        pre {
+            white-space: pre-wrap;
+        }
+
+        .highlight {
+            background-color: black;
+            color: white;
+            font-weight: strong;
+            font-size: 110%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="section">
+                <h5 class="center-align" style="font-weight: bold;">Java Exercises</h5>
+            </div>
+        </div>
+        <div class="row">
+            <h5 class="center-align">Main Menu</h5>
+            <div class="col s12">
+                <div class="row">
+                    <ul class="collapsible">
+                        <li>
+                          <div class="collapsible-header">Beginner</div>
+                          <div class="collapsible-body"><span>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="./sumoftwonumbers.html">Sum of Two Numbers</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="./summultiplesofthreeandfive.html">Sum Multiples of Three and Five</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="./factorial.html">Factorial</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="./linearsearch.html">Linear Search</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="./reversestring.html">Reverse String</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="./findmaximum.html">Find Maximum</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="./averagevalue.html">Average Value</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="./converttouppercase.html">Convert to Upper Case</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="./nthoddelement.html">Nth Odd Element</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="./numberoftreenodes.html">Number of Tree Nodes</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="./countnodesinlist.html">Count Nodes in List</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Count Number of Leaf Nodes</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="">Binary Tree Depth</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Find second largest number in Array</a>
+                          </span></div>
+                        </li>
+                        <li>
+                          <div class="collapsible-header">Intermediate</div>
+                          <div class="collapsible-body"><span>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="">Fizz Buzz</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Prime Number</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="">Fibonacci Number</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Palindrome Check</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="">Even Fibonacci Sum</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Greatest Common Divisor</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="">Package Rice Bags</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Filter Strings</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="">Comma Separated</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Caesar Cipher</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="">Strict Binary Tree Check</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Two Sum</a>
+                          </span></div>
+                        </li>
+                        <li>
+                          <div class="collapsible-header">Advanced</div>
+                          <div class="collapsible-body"><span>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="">Longest Palindrome in Word</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Longest Common Sequence</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="">Largest Prime Factor</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Package Rice Bags 2</a>
+                            <a class="waves-effect waves-light btn blue-grey darken-1" href="">Perfect Binary Tree Check</a>
+                            <a class="waves-effect waves-light btn blue lighten-2" href="">Complete Binary Tree Check</a>
+                          </span></div>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(".dropdown-trigger").dropdown();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function(){
+            $('.collapsible').collapsible();
+        });
+
+        function viewResult() {
+            try {
+                var xpath = $('#xpathInput').val();
+                var htmlCode = $('#htmlCode').val();
+                // Create a temporary div element
+                var tempDiv = document.createElement('div');
+                tempDiv.innerHTML = htmlCode;
+                var result = document.evaluate(xpath, tempDiv, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+                // Iterate through the result snapshot and do something with each node
+                var stringResult = "";
+                for (var i = 0; i < result.snapshotLength; i++) {
+                    var node = result.snapshotItem(i);
+                    console.log(node); // Or do something else with each node
+                    stringResult += node.outerHTML;
+                    if (i + 1 != result.snapshotLength) {
+                        stringResult += '\n';
+                    }
+                }
+                document.getElementById("result").textContent = stringResult;
+                console.log(stringResult);
+
+                let expectedString = "<li>Yorkies</li>\n<li>Loud Cooks</li>\n<li>Belligerent Internet commentators</li>";
+
+                let cleanExpectedString = expectedString.replace(/\s+/g, ' ').replace(/\r?\n/g, '\n').trim();
+                let cleanStringResult = stringResult.replace(/\s+/g, ' ').replace(/\r?\n/g, '\n').trim();
+
+                if (cleanStringResult === cleanExpectedString) {
+                    document.getElementById("answer").innerHTML = "Result: <span style='color: #00c853;'>Correct</span>";
+                } else {
+                    if (cleanStringResult.includes(cleanExpectedString)) {
+                        document.getElementById("answer").innerHTML = "Result: <span style='color: #ff8f00;'>You're almost there</span>";
+                    } else {
+                        document.getElementById("answer").innerHTML = "Result: <span style='color: #ff3d00;'>Incorrect</span>";
+                    }
+                }
+            }
+            catch (error) {
+                document.getElementById("result").textContent = "";
+                document.getElementById("answer").innerHTML = "Result: <span style='color: #ff3d00;'>Incorrect</span>";
+            }
+        }
+    </script>
+</body>
+
+</html>
